@@ -1,7 +1,24 @@
 services:
   streamlit-app:
-    image: USER_DOCKERHUB/projetrna:latest
-    container_name: mon-app-streamlit
+    image: setraniaina18/df_to_quiz:latest
+    container_name: df_to_quiz
+    expose:
+      - "8501"   # plus besoin de le publier sur l'hôte, Nginx s'en charge
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx-proxy
     ports:
-      - "8501:8501"
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - streamlit-app
     restart: unless-stopped
