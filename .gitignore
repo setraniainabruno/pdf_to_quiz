@@ -1,5 +1,4 @@
 # Environnement
-.env
 venv/
 __pycache__/
 *.pyc
@@ -13,3 +12,5 @@ data/generated/*
 
 # OS
 .DS_Store
+config.bat
+node_modules
