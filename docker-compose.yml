@@ -1,7 +1,7 @@
 services:
   streamlit-app:
-    image: setraniaina18/df_to_quiz:latest
-    container_name: df_to_quiz
+    image: setraniaina18/pdf_to_quiz:latest
+    container_name: pdf_to_quiz
     expose:
       - "8501"   # plus besoin de le publier sur l'hôte, Nginx s'en charge
     restart: unless-stopped
