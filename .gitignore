@@ -1,0 +1,15 @@
+# Environnement
+.env
+venv/
+__pycache__/
+*.pyc
+
+# Données sensibles
+data/raw/*
+data/generated/*
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

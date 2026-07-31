@@ -1,0 +1,11 @@
+pymupdf
+openai
+pydantic
+tenacity
+pandas
+matplotlib
+streamlit
+python-dotenv
+joblib
+numpy
+pytest
